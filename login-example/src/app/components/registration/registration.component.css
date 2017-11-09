@@ -1,0 +1,41 @@
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+.registration-container {
+  align-items: center;
+  background-color: #64c9da;
+  height: 375px;
+  margin: 0 auto;
+  width: 440px;
+}
+.registration-panel {
+  margin: 0 auto;
+  width: 300px;
+}
+.login-input {
+  border: 1px solid #D7D7D7;
+  box-sizing: border-box;
+  font-size: 16px;
+  height: 35px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10%;
+  width: 100%;
+}
+.btn-login {
+  color: #7B7B7B;
+  display: block;
+  font-size: 20px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
+.error-msg {
+  color: #F00;
+  padding: 0 35px;
+}

@@ -1,0 +1,19 @@
+<div class="login-container">
+  <div class="login-panel">
+    <div>
+      <input type="email" class="login-input" [(ngModel)]="userName" placeholder="Enter User Name" />
+    </div>
+    <div>
+      <input type="password" class="login-input" [(ngModel)]="password" placeholder="Enter Password" />
+    </div>
+    <div>
+      <button class="btn-login" (click)="login()">Log In</button>
+    </div>
+    <div>
+      <span class="error-msg">{{errorMessage}}</span>
+    </div>
+    <div>
+      <a href="/registration">New User</a>
+    </div>
+  </div>
+</div>

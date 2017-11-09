@@ -1,0 +1,26 @@
+<div class="registration-container">
+  <h1 style="text-align: center;">Registration Form</h1>
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+      <div class="registration-panel">
+        <div>
+          <input type="text" class="login-input" [(ngModel)]="user.name" name="name" placeholder="Enter Name" required
+                 pattern="^[a-zA-Z ]{3,}$" />
+        </div>
+        <div>
+          <input type="email" class="login-input" [(ngModel)]="user.email" name="email"
+                 placeholder="Enter email address" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" />
+        </div>
+        <div>
+          <input type="password" class="login-input" [(ngModel)]="user.password" name="password" placeholder="Enter password" required />
+        </div>
+        <div>
+          <input type="password" class="login-input" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm password" required />
+        </div>
+        <div>
+          <button class="btn-login" [disabled]="!registrationForm.form.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
