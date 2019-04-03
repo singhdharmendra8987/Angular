@@ -1,0 +1,17 @@
+
+<b>Home Appliances Detail</b>
+(Sorting of array of object and column exists in nested object)<br /><br/>
+<table>
+  <tr>
+    <th (click)="sort('id')">Id</th>
+    <th (click)="sort('item.name')">Name</th>
+    <th (click)="sort('item.price')">Price</th>
+    <th (click)="sort('releaseDate')">Release Date</th>
+  </tr>
+  <tr *ngFor="let data of homeApplianceData | orderBy:column:isDesc">
+    <td>{{data.id}}</td>
+    <td>{{data.item.name}}</td>
+    <td>{{data.item.price}}</td>
+    <td>{{data.releaseDate | date}}</td>
+  </tr>
+</table>

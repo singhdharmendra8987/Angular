@@ -4,52 +4,47 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'orderBy'
 })
 export class OrderByPipe implements PipeTransform {
-  transform(values: number[]|string[]|object[], key?: string, reverse?: boolean) {
-    debugger;
+  transform(values: number[]|string[]|object[], key?: string, reverse?: boolean): number[]|string[]|object[] {
     if (!Array.isArray(values) || values.length <= 0) {
       return null;
     }
-
     return this.sort(values, key, reverse);
   }
 
   private sort(value: any[], key?: any, reverse?: boolean): any[] {
     const isInside = key && key.indexOf('.') !== -1;
-
     if (isInside) {
-      key = key.key.split('.');
+      key = key.split('.');
     }
 
-    const array: any[] = value.sort((a: any, b: any): number => {
+    const sortedData = value.sort((firstValue: any, secondValue: any): number => {
       if (!key) {
-        return a > b ? 1 : -1;
+        return firstValue > secondValue ? 1 : -1;
       }
 
       if (!isInside) {
-        return a[key] > b[key] ? 1 : -1;
+        return firstValue[key] > secondValue[key] ? 1 : -1;
       }
 
-      return this.getValue(a, key) > this.getValue(b, key) ? 1 : -1;
+      return this.findValueFromObject(firstValue, key) > this.findValueFromObject(secondValue, key) ? 1 : -1;
     });
 
     if (reverse) {
-      return array.reverse();
+      return sortedData.reverse();
     }
 
-    return array;
+    return sortedData;
   }
 
-  private getValue(object: any, key: string[]) {
-    for (let i = 0, n = key.length; i < n; ++i) {
-      const k = key[i];
-      if (!(k in object)) {
+  private findValueFromObject(valueObject: any, keys: string[]) {
+    for (let index = 0; index < keys.length; index++) {
+      const key = keys[index];
+      if (!(key in valueObject)) {
         return;
       }
-
-      object = object[k];
+      valueObject = valueObject[key];
     }
-
-    return object;
+    return valueObject;
   }
 
 }
