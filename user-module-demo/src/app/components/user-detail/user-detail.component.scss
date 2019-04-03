@@ -1,0 +1,14 @@
+$text-color: rgb(48, 47, 47);
+
+table {
+    color: $text-color;
+    border: 1px solid $text-color;
+    .header {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    td {
+        padding: 0px 10px;
+        border: 1px solid $text-color;
+    }
+}

@@ -1,0 +1,18 @@
+<h3>Users List</h3>
+<ul>
+    <li>
+        <div class="header">
+            <span>Name</span>
+            <span class="designation">Designation</span>
+        </div>
+    </li>
+    <li *ngFor="let user of users" (click)="clickOnUser(user.id)">
+        <div class="user-data">
+            <span>{{user.firstName}} {{user.lastName}}</span>
+            <span class="designation">{{user.designation}}</span>
+        </div>
+    </li>
+</ul>
+
+<ng-template #componentContainer></ng-template>
+<button (click)="showAddUser()">Add User</button>

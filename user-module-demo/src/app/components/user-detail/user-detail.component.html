@@ -1,0 +1,20 @@
+<h3>User Detail</h3>
+<table >
+  <tr class="header">
+    <td>Id</td>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Address</td>
+    <td>Designation</td>
+  </tr>
+  <tr class="detail" *ngIf="user">
+    <td>{{user.id}}</td>
+    <td>{{user.firstName}} {{user.lastName}}</td>
+    <td>{{user.age}}</td>
+    <td>{{user.address}}</td>
+    <td>{{user.designation}}</td>
+  </tr>
+</table>
+<br/>
+<br/>
+<a routerLink="/users">Back to users</a>

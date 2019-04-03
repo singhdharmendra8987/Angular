@@ -1,0 +1,36 @@
+button {
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #cfd8dc;
+}
+li {
+    list-style: none;
+    cursor: pointer;
+    padding: 3px;
+    .header, .user-data {
+        color: #615d5d;
+        display: inline-block;
+        width: 400px;
+    }
+    .header {
+        color: #000;
+        font-weight: bold;
+        font-size: 20px;
+        border-bottom: 2px solid;
+    }
+    .user-data .designation {
+        float: right;
+    }
+    .header .designation {
+        float: right;
+    }
+    .user-data:hover {
+        font-weight: bold;
+    }
+}
