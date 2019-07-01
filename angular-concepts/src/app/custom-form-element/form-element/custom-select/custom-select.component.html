@@ -1,0 +1,3 @@
+<select [name]="name" [(ngModel)]="value">
+  <option *ngFor="let item of itemList" [value]="item[valueMember]">{{item[displayMember]}}</option>
+</select>

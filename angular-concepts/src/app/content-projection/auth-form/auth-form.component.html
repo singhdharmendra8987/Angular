@@ -1,0 +1,18 @@
+<div>
+  <form #form="ngForm" (ngSubmit)="submitted(form.value)">
+
+    <ng-content select=".header"></ng-content>
+  
+    <label>
+      Email
+      <input type="text" name="email" ngModel />
+    </label>
+    <label>
+      Password
+      <input type="password" name="password" ngModel />
+    </label>
+    
+    <ng-content select="button.submit"></ng-content>
+  
+  </form>
+</div>
